@@ -20,17 +20,17 @@ class _FirstPageState extends State<FirstPage> {
       ),
       bottomNavigationBar: Theme(
         data: ThemeData(
-          canvasColor: Colors.amber,
+          canvasColor: Colors.pink,
           
-          primarySwatch: Colors.green,
-          unselectedWidgetColor: Colors.purple
+          primarySwatch: Colors.amber,
+          unselectedWidgetColor: Colors.green
           
           
 
         ),
         child: BottomNavigationBar(
           currentIndex: selectedItem,
-          type: BottomNavigationBarType.fixed,
+          type: BottomNavigationBarType.shifting,
           onTap: (index) {
             selectedItem = index;
             setState(() {
@@ -39,11 +39,11 @@ class _FirstPageState extends State<FirstPage> {
           },
           
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Ana Sayfa'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Ara'),
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Ekle'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Ana Sayfa', backgroundColor: Colors.purple),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Ara', backgroundColor: Colors.orange),
+            BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Ekle', backgroundColor: Colors.green),
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_box), label: 'Profil')
+                icon: Icon(Icons.account_box), label: 'Profil', backgroundColor: Colors.red)
           ],
         ),
       ),
