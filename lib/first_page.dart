@@ -18,34 +18,26 @@ class _FirstPageState extends State<FirstPage> {
       body: const Center(
         child: Text("Hello World"),
       ),
-      bottomNavigationBar: Theme(
-        data: ThemeData(
-          canvasColor: Colors.pink,
-          
-          primarySwatch: Colors.amber,
-          unselectedWidgetColor: Colors.green
-          
-          
-
-        ),
-        child: BottomNavigationBar(
-          currentIndex: selectedItem,
-          type: BottomNavigationBarType.shifting,
-          onTap: (index) {
-            selectedItem = index;
-            setState(() {
-              
-            });
-          },
-          
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Ana Sayfa', backgroundColor: Colors.purple),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Ara', backgroundColor: Colors.orange),
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Ekle', backgroundColor: Colors.green),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_box), label: 'Profil', backgroundColor: Colors.red)
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+       fixedColor: Colors.brown,
+        // unselectedLabelStyle: TextStyle(color: Colors.brown),
+        unselectedItemColor: Colors.blue,
+        currentIndex: selectedItem,
+        type: BottomNavigationBarType.shifting,
+        onTap: (index) {
+          selectedItem = index;
+          setState(() {
+            
+          });
+        },
+        
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Ana Sayfa', backgroundColor: Colors.purple),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Ara', backgroundColor: Colors.orange),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Ekle', backgroundColor: Colors.green, activeIcon: Icon(Icons.add, color: Colors.amber,)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_box), label: 'Profil', backgroundColor: Colors.red)
+        ],
       ),
     );
   }
